@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+</head>
+<body>
+    <script>
+        // Получение имени и возраста пользователя
+        let name = prompt("Введите ваше имя:");
+        let age = prompt("Введите ваш возраст:");
+
+        // Функция для генерации случайного числа в заданном диапазоне
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Функция для получения ответа пользователя и записи результатов в консоль
+        function askQuestion(question, correctAnswer) {
+            let userAnswer = parseFloat(prompt(question));
+            console.log(`${question} = ${correctAnswer} (Ваш ответ ${userAnswer})`);
+        }
+
+        // Генерация и решение примеров
+        let num1 = getRandomNumber(1, 10);
+        let num2 = getRandomNumber(1, 10);
+
+        askQuestion(`${num1} + ${num2}`, num1 + num2);
+        askQuestion(`${num1} - ${num2}`, num1 - num2);
+        askQuestion(`${num1} * ${num2}`, num1 * num2);
+        askQuestion(`${num1} / ${num2}`, (num1 / num2).toFixed(2));
+        askQuestion(`${num1} % ${num2}`, num1 % num2);
+
+        // Сообщение пользователю о завершении
+        alert("Все примеры решены. Проверьте результаты в консоли разработчика.");
+
+    </script>
+</body>
+</html>
